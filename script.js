@@ -6,7 +6,7 @@ const fireworks = document.querySelectorAll(".firework")
 const nextYear = new Date().getFullYear() + 1
 const nextTime = new Date(`January 01 ${nextYear} 00:00:00`)
 
-const uptadeYear = () => {
+function yearCalc(){
     const thisYear = new Date()
     const difference = nextTime - thisYear
     const days = Math.floor((((difference / 1000) / 60) / 60) / 24)
@@ -38,6 +38,6 @@ function printTimer(days, hours, minutes, seconds){
     }
 }
 
-setInterval(uptadeYear, 1000)
+setInterval(yearCalc, 1000)
 
-uptadeYear()
+yearCalc()
